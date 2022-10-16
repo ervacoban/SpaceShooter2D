@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MainMenu : MonoBehaviour
     private string connectionIP, connectionPort;
     private TextMeshProUGUI _errorMessageUI;
 
-     public void ConnectToServer(bool isHost)
+    public void ConnectToServer(bool isHost)
     {
         // TODO: 
         // - switch to multiplayer connection scene
@@ -56,6 +57,11 @@ public class MainMenu : MonoBehaviour
         return true;
     }
     
+    public void PlayOffline()
+    {
+        SceneManager.LoadScene("Level_Offline");
+    }
+
     public void ExitGame()
     {
         #if UNITY_EDITOR
