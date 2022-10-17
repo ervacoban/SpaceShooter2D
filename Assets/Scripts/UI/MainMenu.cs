@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
     public void ConnectToServer(bool isHost)
     {
         // TODO: 
-        // - switch to multiplayer connection scene
         // - username
 
         if(isHost)
@@ -28,6 +27,7 @@ public class MainMenu : MonoBehaviour
             connectionPort = _portInputClient.text;
             _errorMessageUI = _errorMessageUIClient;
         }
+
         if(!CorrectInputCheck(connectionIP, connectionPort))
         {
             _errorMessageUI.text = "Wrong Input!";
@@ -37,10 +37,7 @@ public class MainMenu : MonoBehaviour
         ConnectionInfo.isHost = isHost;
         ConnectionInfo.connectionIP = connectionIP;
         ConnectionInfo.connectionPort = connectionPort;
-
-        #if UNITY_EDITOR
-        Debug.Log("IsHost: " + ConnectionInfo.isHost + " IP: " + ConnectionInfo.connectionIP + " Port: " + ConnectionInfo.connectionPort);
-        #endif
+        ChangeScene("Lobby");
     }
 
     private bool CorrectInputCheck(string ip, string port)
@@ -57,16 +54,13 @@ public class MainMenu : MonoBehaviour
         return true;
     }
     
-    public void PlayOffline()
+    public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("Level_Offline");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame()
     {
-        #if UNITY_EDITOR
-        Debug.Log("Exit Game");
-        #endif
         Application.Quit();
     }
 }
