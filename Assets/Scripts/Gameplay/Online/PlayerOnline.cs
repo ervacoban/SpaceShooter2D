@@ -8,7 +8,7 @@ public class PlayerOnline : NetworkBehaviour
     [SerializeField] private GameObject playerController;
     void Start()
     {
-        if(!IsOwner)
+        if(!IsLocalPlayer)
         {
             Destroy(playerController);
             enabled = false;
