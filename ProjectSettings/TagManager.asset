@@ -3,16 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Background
-  - Jet
-  - Ufo
-  - Rocket
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - XEdges
+  - 
   - Water
   - UI
   - 
@@ -42,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 4286476971
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 1300448295
     locked: 0
